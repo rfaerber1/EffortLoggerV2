@@ -12,9 +12,7 @@ import javafx.scene.layout.Pane;
 
 
 public class Main extends Application {
-	int WIDTH = 780;
-	int HEIGHT = 500;
-	
+		
 	@Override
 	public void start(Stage stage) {
 		Parent root = null;
@@ -30,24 +28,12 @@ public class Main extends Application {
         stage.setTitle("FXML Welcome");
         stage.setScene(scene);
         stage.show();
-		/*
-		// create a ControlPane object
-		UserInterfacePane pane = new UserInterfacePane(WIDTH, HEIGHT);
+	}
 
-		// put pane onto the rootPane
-		Pane rootPane = new Pane();
-		rootPane.getChildren().add(pane);
-
-		// Create a scene and place rootPane in the stage
-		Scene scene = new Scene(rootPane, WIDTH, HEIGHT);
-		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-		
-		stage.setTitle("User Input Prototype");
-		
-		// Place the scene in the stage
-		stage.setScene(scene); 
-		// Display the stage
-		stage.show(); */
+	// From Din's code
+	public void changeScene(String fxml) throws IOException {
+		Parent pane = FXMLLoader.load(getClass().getResource(fxml));
+		stg.getScene().setRoot(pane);
 	}
 
 	public static void main(String[] args) {
