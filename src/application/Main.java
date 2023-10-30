@@ -16,8 +16,29 @@ public class Main extends Application {
 	int HEIGHT = 500;
 	
 	@Override
+	public void start(Stage primaryStage) throws IOException {
+		// create a ControlPane object
+		PrototypePane pane = new PrototypePane(WIDTH, HEIGHT);
+
+		// put pane onto the rootPane
+		Pane rootPane = new Pane();
+		rootPane.getChildren().add(pane);
+
+		// Create a scene and place rootPane in the stage
+		Scene scene = new Scene(rootPane, WIDTH, HEIGHT);
+		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+				
+		primaryStage.setTitle("User Input Prototype");
+				
+		// Place the scene in the stage
+		primaryStage.setScene(scene); 
+		// Display the stage
+		primaryStage.show(); 
+	}
+	
+	/*@Override
 	public void start(Stage stage) {
-		Parent root = null;
+		Pane root = null;
 		try {
 			root = FXMLLoader.load(getClass().getResource("EffortLoggerV2GUIPrototype.fxml"));
 		} catch (IOException e) {
@@ -30,25 +51,8 @@ public class Main extends Application {
         stage.setTitle("FXML Welcome");
         stage.setScene(scene);
         stage.show();
-		/*
-		// create a ControlPane object
-		UserInterfacePane pane = new UserInterfacePane(WIDTH, HEIGHT);
-
-		// put pane onto the rootPane
-		Pane rootPane = new Pane();
-		rootPane.getChildren().add(pane);
-
-		// Create a scene and place rootPane in the stage
-		Scene scene = new Scene(rootPane, WIDTH, HEIGHT);
-		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-		
-		stage.setTitle("User Input Prototype");
-		
-		// Place the scene in the stage
-		stage.setScene(scene); 
-		// Display the stage
-		stage.show(); */
-	}
+	}*/
+	
 
 	public static void main(String[] args) {
 		Application.launch(args);
