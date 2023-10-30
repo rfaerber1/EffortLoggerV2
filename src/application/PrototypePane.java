@@ -11,10 +11,6 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 
 public class PrototypePane extends Pane {
-
-	// The constructor creates two panes with waves and movement controls
-	// Initial colors for the waves are BLACK and PINK
-	// The two panes are arranged in a GridPane
 	
 	Pane pane;
 	
