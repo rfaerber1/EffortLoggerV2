@@ -18,7 +18,9 @@ public class EffortConsole implements Initializable{
         clockStatus.setText("Clock Stopped");
     }
     @FXML protected void startActivity(ActionEvent event) {
-        clockStatus.setText("Clock Started");
+    	if(getProject() != null && getLifeCycleStep() != null && getEffortCategory() != null && getDeliverable() != null) {
+    		clockStatus.setText("Clock Started");
+    	}
     }
     
     @FXML ChoiceBox<String> Projects;
@@ -31,6 +33,10 @@ public class EffortConsole implements Initializable{
     			   "Development Project"
     	);
     	Projects.getItems().addAll(projects);
+    }
+    
+    public String getProject() {
+    	return Projects.getSelectionModel().getSelectedItem();
     }
       
     @FXML ChoiceBox<String> LifeCycleSteps;
@@ -52,6 +58,10 @@ public class EffortConsole implements Initializable{
     	);
     	LifeCycleSteps.getItems().addAll(steps);
     }
+    
+    public String getLifeCycleStep() {
+    	return LifeCycleSteps.getSelectionModel().getSelectedItem();
+    }
            
     @FXML ChoiceBox<String> EffortCategories;
     ObservableList<String> categories = FXCollections.observableArrayList();
@@ -66,6 +76,10 @@ public class EffortConsole implements Initializable{
     			   	"Others"
     	);
     	EffortCategories.getItems().addAll(categories);
+    }
+    
+    public String getEffortCategory() {
+    	return EffortCategories.getSelectionModel().getSelectedItem();
     }
 
     
@@ -83,6 +97,10 @@ public class EffortConsole implements Initializable{
     	);
     	Deliverables.getItems().addAll(deliverables);
     }
+    
+    public String getDeliverable() {
+    	return Deliverables.getSelectionModel().getSelectedItem();
+    }
 
     
     @FXML ChoiceBox<Integer> PlanningPokerCards;
@@ -94,6 +112,10 @@ public class EffortConsole implements Initializable{
     			  1,2,3,4,5,6 				
     	);
     	PlanningPokerCards.getItems().addAll(list);
+    }
+    
+    public int getPlanningPokerCards() {
+    	return PlanningPokerCards.getSelectionModel().getSelectedItem();
     }
     
       
