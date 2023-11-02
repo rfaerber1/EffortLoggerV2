@@ -12,9 +12,12 @@ import javafx.scene.layout.Pane;
 
 
 public class Main extends Application {
+	
+	Stage stg;
 		
 	@Override
 	public void start(Stage stage) {
+		stg = stage;
 		Parent root = null;
 		try {
 			root = FXMLLoader.load(getClass().getResource("EffortLoggerV2GUIPrototype.fxml"));
