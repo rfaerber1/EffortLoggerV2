@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EffortLogEditor">
+   <children>
+      <Button layoutX="14.0" layoutY="375.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" text="Effort Log Console" onAction="#showEffortLogConsole">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="447.0" layoutY="61.0" mnemonicParsing="false" text="Clear this Effort Log" />
+      <Button layoutX="156.0" layoutY="377.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" text="Defect Log Console">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="310.0" layoutY="377.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" text="Definitions">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="453.0" layoutY="377.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" text="Effort and Defect Logs">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Button>
+      <ChoiceBox fx:id="Projects" layoutX="46.0" layoutY="61.0" prefHeight="26.0" prefWidth="334.0" />
+      <ChoiceBox fx:id="LifeCycleSteps" layoutX="46.0" layoutY="123.0" prefHeight="26.0" prefWidth="524.0" />
+      <ChoiceBox fx:id="EffortCategories" layoutX="329.0" layoutY="225.0" prefHeight="26.0" prefWidth="206.0" />
+      <ChoiceBox fx:id="Deliverables" layoutX="46.0" layoutY="226.0" prefHeight="25.0" prefWidth="239.0" />
+      <Text layoutX="126.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Effort Log Editor" textAlignment="CENTER" underline="true" wrappingWidth="384.21630859375">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="46.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Project:" />
+      <Text layoutX="328.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Effort Category:" />
+      <Text layoutX="46.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Effort Log Entry to Modify" />
+      <Text layoutX="46.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Life Cycle Step:" />
+      <Text layoutX="2.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EffortLoggerV2 Prototype">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <Text layoutX="48.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No effort log entries for thie project">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <TextField layoutX="81.0" layoutY="171.0" prefHeight="26.0" prefWidth="92.0" text="yyyy-mm-dd" />
+      <TextField layoutX="253.0" layoutY="170.0" prefHeight="26.0" prefWidth="92.0" text="hh:mm:ss" />
+      <TextField layoutX="424.0" layoutY="170.0" prefHeight="26.0" prefWidth="92.0" text="hh:mm:ss" />
+      <Label layoutX="51.0" layoutY="175.0" prefHeight="18.0" prefWidth="39.0" text="Date:" />
+      <Label layoutX="192.0" layoutY="175.0" prefHeight="18.0" prefWidth="62.0" text="Start Time:" />
+      <Label layoutX="361.0" layoutY="175.0" prefHeight="18.0" prefWidth="62.0" text="Stop Time:" />
+      <ChoiceBox fx:id="EffortCategories1" layoutX="45.0" layoutY="273.0" prefHeight="26.0" prefWidth="334.0" />
+      <Button layoutX="401.0" layoutY="273.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" text="Update this Entry" />
+      <Button layoutX="45.0" layoutY="324.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" text="Delete this Entry" />
+      <Button layoutX="198.0" layoutY="324.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="182.0" text="Split this Entry into Two Entries" />
+      <Button layoutX="392.0" layoutY="324.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="182.0" text="Proceed to Effort Log Console" />
+   </children>
+</AnchorPane>

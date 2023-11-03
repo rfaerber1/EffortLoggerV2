@@ -12,9 +12,12 @@ import javafx.scene.layout.Pane;
 
 
 public class Main extends Application {
+	
+	static Stage stg;
 		
 	@Override
 	public void start(Stage stage) {
+		stg = stage;
 		Parent root = null;
 		try {
 			root = FXMLLoader.load(getClass().getResource("EffortLoggerV2GUIPrototype.fxml"));
@@ -23,17 +26,15 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	    
-        Scene scene = new Scene(root, 600, 400);
+        Scene scene = new Scene(root, 600, 425);
     
         stage.setTitle("FXML Welcome");
         stage.setScene(scene);
         stage.show();
 	}
-
-	// From Din's code
-	public void changeScene(String fxml) throws IOException {
-		Parent pane = FXMLLoader.load(getClass().getResource(fxml));
-		stg.getScene().setRoot(pane);
+	
+	public static Stage getStage() {
+		return stg;
 	}
 
 	public static void main(String[] args) {
