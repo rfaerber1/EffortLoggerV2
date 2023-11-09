@@ -31,7 +31,7 @@ public class CheckInput {
 	 * Checks if String str only contains letters 
 	 * (Use getBadChar to see (first) character that doesn't belong)
 	 * @param str
-	 * @return Returns false if it doesn't, else returns true
+	 * @return Returns false if input is invalid, true otherwise
 	 */
 	public Boolean checkForAllLetters(String str) {  
 	     for(int i = 0; i < str.length(); i ++) {
@@ -48,7 +48,7 @@ public class CheckInput {
 	 * Checks if String str only contains an Integer 
 	 * (Use getBadChar to see (first) character that doesn't belong)
 	 * @param str
-	 * @return Returns false if it doesn't, else returns true
+	 * @return Returns false if input is invalid, true otherwise
 	 */
 	public Boolean checkForInt(String str) {
 		for(int i = 0; i < str.length(); i ++) {
@@ -64,8 +64,7 @@ public class CheckInput {
 	 * Checks if String str only contains a Double 
 	 * (Use getBadChar to see (first) character that doesn't belong)
 	 * @param str
-	 * @return Returns false if it doesn't, else returns true
-	 * Use getBadChar to see (first) character that doesn't belong
+	 * @return Returns false if input is invalid, true otherwise
 	 */
 	public Boolean checkForDouble(String str) {
 		for(int i = 0; i < str.length()-1; i ++) {
@@ -82,7 +81,7 @@ public class CheckInput {
 	 * (Use getBadChar to see (first) character that doesn't belong)
 	 * (Use getCorrectLength to see if String is correct length)
 	 * @param str
-	 * @return Returns false if it doesn't, else returns true
+	 * @return Returns false if input is invalid, true otherwise
 	 */
 	public Boolean checkForDate(String str) {  
 		setCorrectLength(true);
@@ -110,7 +109,7 @@ public class CheckInput {
 	 * (Use getBadChar to see (first) character that doesn't belong)
 	 * (Use getCorrectLength to see if String is correct length)
 	 * @param str
-	 * @return Returns false if it doesn't, else returns true
+	 * @return Returns false if input is invalid, true otherwise
 	 */
 	public Boolean checkForTime(String str) {  
 		setCorrectLength(true);
@@ -136,7 +135,7 @@ public class CheckInput {
 	 * Checks if String contains any characters it shouldn't for general text
 	 * (Use getBadChar to see (first) character that doesn't belong)
 	 * @param str
-	 * @return Returns false if it doesn't, else returns true
+	 * @return Returns false if input is invalid, true otherwise
 	 */
 	public Boolean checkForGeneralText(String str) {  
 		for(int i = 0; i < str.length(); i ++) {
@@ -152,7 +151,7 @@ public class CheckInput {
 	 * Checks if String str only contains character acceptable for username/password 
 	 * (Use getBadChar to see (first) character that doesn't belong)
 	 * @param str
-	 * @return Returns false if it doesn't, else returns true
+	 * @return Returns false if input is invalid, true otherwise
 	 */
 	public Boolean checkForPassword(String str) {  
 	     for(int i = 0; i < str.length(); i ++) {
