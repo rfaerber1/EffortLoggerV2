@@ -19,7 +19,8 @@ public class EffortConsole implements Initializable{
 	
 	@FXML protected void showEffortLogEditor(ActionEvent event) throws IOException {
 		pane = FXMLLoader.load(getClass().getResource("EffortLogEditor.fxml"));
-		Main.getStage().getScene().setRoot(pane);
+		Main.setScene("Effort Log Editor", pane);
+		//Main.getStage().setTitle("Effort Log Editor");
 	}
 	
 	/* Need to be implemented

@@ -33,8 +33,16 @@ public class Main extends Application {
         stage.show();
 	}
 	
-	public static Stage getStage() {
-		return stg;
+	
+	/**
+	 * Change scene the stage is showing
+	 * 
+	 * @param title
+	 * @param pane
+	 */
+	public static void setScene(String title, Parent pane) {
+		stg.getScene().setRoot(pane);
+		stg.setTitle(title);
 	}
 
 	public static void main(String[] args) {
