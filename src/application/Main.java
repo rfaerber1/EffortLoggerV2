@@ -33,7 +33,6 @@ public class Main extends Application {
         stage.show();
 	}
 	
-	
 	/**
 	 * Change scene the stage is showing
 	 * 

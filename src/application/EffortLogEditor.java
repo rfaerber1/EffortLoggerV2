@@ -27,5 +27,4 @@ public class EffortLogEditor implements Initializable{
 		// TODO Auto-generated method stub
 		
 	}
-	
 }
