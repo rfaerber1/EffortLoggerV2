@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.text.Text;
 
@@ -165,6 +166,12 @@ public class EffortConsole implements Initializable{
 		loadDeliverables();
 		loadCards();
 	}
-    
+    @FXML
+	private Button defectLogButton;
+	
+	public void changeScene(ActionEvent event)  throws IOException {
+		Main m = new Main();
+		m.changeScene("DefectConsole.fxml");
+	}
 
 }

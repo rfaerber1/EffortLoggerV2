@@ -47,6 +47,12 @@ public class Main extends Application {
 	public static void main(String[] args) {
 		Application.launch(args);
 	}
+
+	public void changeScene(String fxml) throws IOException {
+		// TODO Auto-generated method stub
+		Parent pane = FXMLLoader.load(getClass().getResource(fxml));
+		stg.getScene().setRoot(pane);
+	}
 	
 }
 
