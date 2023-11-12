@@ -66,9 +66,10 @@
             <Font size="14.0" />
          </font>
       </Text>
-       <Text layoutX="242.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Historical Data:"/>
+      <Text layoutX="242.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Historical Data:"/>
       <TextField layoutX="242.0" layoutY="312.0" prefHeight="25.0" prefWidth="239.0" fx:id="searchBar"/>
-      <Button layoutX="488.0" layoutY="312.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="68.0" text="Search">
+      <ListView layoutX="242.0" layoutY="337.0" prefHeight="50.0" prefWidth="239.0" fx:id="listView"/>
+      <Button layoutX="488.0" layoutY="312.0" mnemonicParsing="false" onAction="#search" prefHeight="25.0" prefWidth="68.0" text="Search">
       	<font>
       		<Font size ="10.0"/>
       	</font>
