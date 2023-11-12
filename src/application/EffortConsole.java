@@ -1,7 +1,9 @@
 package application;
- 
+
+import java.io.Console;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
@@ -13,31 +15,26 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.text.Text;
+
  
 public class EffortConsole implements Initializable{
+
 	Parent pane;
 	
 	@FXML protected void showEffortLogEditor(ActionEvent event) throws IOException {
 		pane = FXMLLoader.load(getClass().getResource("EffortLogEditor.fxml"));
-		Main.getStage().getScene().setRoot(pane);
+		Main.setScene("Effort Log Editor", pane);
 	}
 	
 	/* Need to be implemented
 	
 	@FXML protected void showDefectLogConsole(ActionEvent event) throws IOException {
 		pane = FXMLLoader.load(getClass().getResource("_______.fxml"));
-		Main.getStage().getScene().setRoot(pane);
+		Main.setScene("Defect Log Console", pane);
 	}
 	
-	@FXML protected void showDefinitions(ActionEvent event) throws IOException {
-		pane = FXMLLoader.load(getClass().getResource("_______.fxml"));
-		Main.getStage().getScene().setRoot(pane);
-	}
-	
-	@FXML protected void showEffortAndDefectLogs(ActionEvent event) throws IOException {
-		pane = FXMLLoader.load(getClass().getResource("________.fxml"));
-		Main.getStage().getScene().setRoot(pane);
-	}
+	Also Planning Poker Pane
+
 	 */
 	
     @FXML private Text clockStatus;
@@ -48,18 +45,31 @@ public class EffortConsole implements Initializable{
     @FXML protected void startActivity(ActionEvent event) {
     	if(getProject() != null && getLifeCycleStep() != null && getEffortCategory() != null && getDeliverable() != null) {
     		clockStatus.setText("Clock Started");
+    		
+    		// create effort log for selected project
+    		Project project = Data.getProject(getProject());
+    		project.createEffortLog( new EffortLog(getDeliverable(), getEffortCategory(), getLifeCycleStep()) );
+    		
+    		// temporary, show effort log was created
+    		String effortLog = project.getEffortLogs().get(project.getEffortLogs().size()-1).getLog();
+    		System.out.println("EffortLog created within Project: " + project.getName() +"\nEffort Log: \n" + effortLog);
     	}
     }
     
     @FXML ChoiceBox<String> Projects;
     ObservableList<String> projects = FXCollections.observableArrayList();
     
-    private void loadProjects() {
+    private void loadProjects() {    	
+    	Data.addProject(new Project("Business Project"));
+    	Data.addProject(new Project("Development Project"));
+    	
     	projects.removeAll();
-    	projects.addAll(
-    			   "Business Project",
-    			   "Development Project"
-    	);
+    	
+    	String[] projectNames = Data.getProjectNames();
+    	for (int i = 0; i < Data.getNumberOfProjects(); i++) {
+    		projects.add(projectNames[i]);
+    	}
+
     	Projects.getItems().addAll(projects);
     }
     

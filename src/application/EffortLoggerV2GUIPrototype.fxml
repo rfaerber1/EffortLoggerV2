@@ -9,7 +9,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EffortConsole">
    <children>
-      <Button layoutX="14.0" layoutY="353.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" text="Effort Log Editior">
+      <Button layoutX="14.0" layoutY="353.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" text="Effort Log Editior" onAction="#showEffortLogEditor">
          <font>
             <Font size="12.0" />
          </font>

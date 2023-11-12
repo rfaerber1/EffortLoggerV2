@@ -19,7 +19,7 @@ public class EffortLogEditor implements Initializable{
 	
 	@FXML protected void showEffortLogConsole(ActionEvent event) throws IOException {
 		pane = FXMLLoader.load(getClass().getResource("EffortLoggerV2GUIPrototype.fxml"));
-		Main.getStage().getScene().setRoot(pane);
+		Main.setScene("Effort Console", pane);
 	}
 
 	@Override
@@ -27,5 +27,4 @@ public class EffortLogEditor implements Initializable{
 		// TODO Auto-generated method stub
 		
 	}
-	
 }
