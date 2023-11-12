@@ -12,33 +12,33 @@ public class Data {
 	private static Project[] projects = new Project[10];
 	
 	// number of projects in array
-	private static int length = 0;
+	private static int numOfProjects = 0;
 	
 	public Data() {
 		
 	}
 	
 	public static String[] getProjectNames() {
-		String[] names = new String[length];
-		for (int i = 0; i < length; i++) {
+		String[] names = new String[numOfProjects];
+		for (int i = 0; i < numOfProjects; i++) {
 			names[i] = projects[i].getName();
 		}
 		return names;
 	}
 	
 	public static int getNumberOfProjects() {
-		return length;
+		return numOfProjects;
 	}
 	
 	public static void addProject(Project project) {
-		if (length < 10) {
-			projects[length] = project;
-			length ++;
+		if (numOfProjects < 10) {
+			projects[numOfProjects] = project;
+			numOfProjects ++;
 		}
 	}
 	
 	public static Project getProject(String name) {
-		for (int i = 0; i < length; i ++) {
+		for (int i = 0; i < numOfProjects; i ++) {
 			if(name.equals(projects[i].getName())) {
 				return projects[i];
 			}

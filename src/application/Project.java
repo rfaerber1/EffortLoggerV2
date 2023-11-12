@@ -12,7 +12,7 @@ public class Project {
 	private String name;
 	private String description;
 	
-	private List<UserStory> userStories;
+	private ArrayList<UserStory> userStories = new ArrayList<UserStory>();
 	
 	// for effortLogs not assigned to a user story
 	private ArrayList<EffortLog> effortLogs = new ArrayList<EffortLog>();

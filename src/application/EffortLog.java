@@ -2,10 +2,10 @@ package application;
  
  
 public class EffortLog{
-	String deliverable;
-	String lifeCycleStep;
-	String effortCategory;
-	double timeSpent = 0;
+	private String deliverable;
+	private String lifeCycleStep;
+	private String effortCategory;
+	private double timeSpent = 0;
 	
 	/**
 	 * 
@@ -17,6 +17,32 @@ public class EffortLog{
 		this.deliverable = deliverable;
 		this.lifeCycleStep = lifeCycleStep;
 		this.effortCategory = effortCategory;
+	}
+	
+	public String getDeliverable() {
+		return deliverable;
+	}
+	
+	public String getLifeCycleStep() {
+		return lifeCycleStep;
+	}
+	
+	public String getEffortCategory() {
+		return effortCategory;
+	}
+	
+	public void setTimeSpent(double time) {
+		timeSpent = time;
+	}
+	
+	public double getTimeSpent() {
+		return timeSpent;
+	}
+	
+	public String getLog() {
+		return "Life Cycle Step: " + lifeCycleStep + "\n" + 
+				"Effort Category: " + effortCategory + "\n" +
+				"Deliverable: " + deliverable + "\n";
 	}
 	
 }

@@ -1,5 +1,6 @@
 package application;
  
+import java.io.Console;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -47,6 +48,10 @@ public class EffortConsole implements Initializable{
     		// create effort log for selected project
     		Project project = Data.getProject(getProject());
     		project.createEffortLog( new EffortLog(getDeliverable(), getEffortCategory(), getLifeCycleStep()) );
+    		
+    		// temporary, show effort log was created
+    		String effortLog = project.getEffortLogs().get(project.getEffortLogs().size()-1).getLog();
+    		System.out.println("EffortLog created within Project: " + project.getName() +"\nEffort Log: \n" + effortLog);
     	}
     }
     

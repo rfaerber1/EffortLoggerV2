@@ -35,7 +35,7 @@ public class UserStory {
 		effortLogs.add(effortLog);
 	}
 	
-	public List<EffortLog> getEffortLogs(){
+	public ArrayList<EffortLog> getEffortLogs(){
 		return effortLogs;
 	}
 	
@@ -43,7 +43,7 @@ public class UserStory {
 		defects.add(defectLog);
 	}
 
-	public List<Defect> getDefectLogs(){
+	public ArrayList<Defect> getDefectLogs(){
 		return defects;
 	}
 	
