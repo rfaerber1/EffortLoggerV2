@@ -1,6 +1,7 @@
 package application;
 
 import java.io.Console;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -24,6 +25,9 @@ import javafx.scene.text.Text;
  
 public class EffortConsole implements Initializable{
 
+	File f = new File("output.xml");
+	long startTime, stopTime = 0;
+	int hours, minutes = 0;
 	Parent pane;
 	
 	@FXML protected void showEffortLogEditor(ActionEvent event) throws IOException {
@@ -45,11 +49,17 @@ public class EffortConsole implements Initializable{
     @FXML private Text clockStatus;
     
     @FXML protected void stopActivity(ActionEvent event) {
+    	stopTime = System.currentTimeMillis();
+    	stopTime = stopTime - startTime;
+    	hours = (int)(stopTime/3600000);
+    	minutes = ((int)(stopTime%3600000)/60000);
         clockStatus.setText("Clock Stopped");
+        System.out.println("Hours: " + hours + ". Minutes: " + minutes);
     }
     @FXML protected void startActivity(ActionEvent event) {
     	if(getProject() != null && getLifeCycleStep() != null && getEffortCategory() != null && getDeliverable() != null) {
     		clockStatus.setText("Clock Started");
+    		startTime = System.currentTimeMillis();
     		
     		// create effort log for selected project
     		Project project = Data.getProject(getProject());
@@ -152,7 +162,7 @@ public class EffortConsole implements Initializable{
     private void loadCards() {
     	list.removeAll();
     	list.addAll(
-    			  1,2,3,4,5,6 				
+    			  1,2,3,5,8,13,20,50,100,200 				
     	);
     	PlanningPokerCards.getItems().addAll(list);
     }
