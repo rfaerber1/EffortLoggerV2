@@ -1,3 +1,6 @@
+// Author: Din Zaklan
+// Date: 11/11/2023
+// Description: The controller for the Defect Console page.
 package application;
 
 import java.io.IOException;
