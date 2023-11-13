@@ -1,3 +1,5 @@
 /module-info.class
-/bin/application
+/bin/application/
 *.classpath
+/application/
+*.xml
