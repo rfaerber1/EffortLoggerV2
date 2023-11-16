@@ -77,18 +77,37 @@ public class Project {
 	 */
 	
 	public void createEffortLog(EffortLog effortLog) {
+		effortLog.setName("Effort Log " + (effortLogs.size()+1));
 		effortLogs.add(effortLog);
+		
 	}
 
-	public List<EffortLog> getEffortLogs(){
+	public ArrayList<EffortLog> getEffortLogs(){
 		return effortLogs;
+	}
+	
+	public EffortLog getEffortLog(String name){
+		for (int i = 0; i < effortLogs.size(); i ++) {
+			if(name.equals(effortLogs.get(i).getName())) {
+				return effortLogs.get(i);
+			}
+		}
+		return null;
+	}
+	
+	public String[] getEffortLogNames() {
+		String[] names = new String[effortLogs.size()];
+		for (int i = 0; i < effortLogs.size(); i++) {
+			names[i] = effortLogs.get(i).getName();
+		}
+		return names;
 	}
 	
 	public void createDefectLog(Defect defectLog) {
 		defects.add(defectLog);
 	}
 
-	public List<Defect> getDefectLogs(){
+	public ArrayList<Defect> getDefectLogs(){
 		return defects;
 	}
 }

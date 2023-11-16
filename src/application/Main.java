@@ -11,12 +11,11 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
 
-public class Main extends Application {
-	
-	static Stage stg;
+public class Main extends Application{
 		
+	static Stage stg;
 	@Override
-	public void start(Stage stage) {
+	public void start(Stage stage) {	
 		stg = stage;
 		Parent root = null;
 		try {
@@ -43,8 +42,9 @@ public class Main extends Application {
 		stg.getScene().setRoot(pane);
 		stg.setTitle(title);
 	}
-
-	public static void main(String[] args) {
+	
+	
+	public static void main(String[] args) {		
 		Application.launch(args);
 	}
 	
