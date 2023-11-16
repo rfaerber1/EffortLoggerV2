@@ -30,11 +30,17 @@ public class Data {
 		return numOfProjects;
 	}
 	
-	public static void addProject(Project project) {
+	public static boolean addProject(Project project) {
+		for (int i = 0; i < numOfProjects; i++) {
+			if(project.getName() == projects[i].getName()) {
+				return false;
+			}
+		}
 		if (numOfProjects < 10) {
 			projects[numOfProjects] = project;
 			numOfProjects ++;
 		}
+		return true;
 	}
 	
 	public static Project getProject(String name) {
