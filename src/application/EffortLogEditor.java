@@ -28,26 +28,26 @@ public class EffortLogEditor implements Initializable{
 	
 	Project project;
 	EffortLog effortLog;
+	CheckInput checkInput = new CheckInput();
 	
 	@FXML TextField Date;
 	@FXML TextField StartTime;
 	@FXML TextField EndTime;
 	
 	@FXML protected void updateLog(ActionEvent event) {
-		if(effortLog != null) {
+		if(effortLog != null && checkInput.checkForDate(Date.getText()) == true && checkInput.checkForTime(StartTime.getText()) == true && checkInput.checkForTime(StartTime.getText()) == true) {
 			effortLog.setDate(Date.getText());
 			effortLog.setStartTime(StartTime.getText());
 			effortLog.setEndTime(EndTime.getText());
 		}
 	}
 	
+	
 	@FXML ChoiceBox<String> Projects;
     ObservableList<String> projects = FXCollections.observableArrayList();
     
     private void loadProjects() {    	    	
     	projects.removeAll();
-    	
-    	Date.setText("test");
     	
     	String[] projectNames = Data.getProjectNames();
     	for (int i = 0; i < Data.getNumberOfProjects(); i++) {

@@ -3,8 +3,12 @@ package application;
 import java.io.Console;
 import java.io.IOException;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.Clock;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
@@ -40,18 +44,35 @@ public class EffortConsole implements Initializable{
 
 	 */
 	
+	Project project;
+	EffortLog effortLog;
+	
+	SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-mm-dd");
+	SimpleDateFormat timeFormatter = new SimpleDateFormat("hh:mm:ss");
+	Date date = new Date();
+	
+	
     @FXML private Text clockStatus;
     
     @FXML protected void stopActivity(ActionEvent event) {
         clockStatus.setText("Clock Stopped");
+        date.setTime(System.currentTimeMillis());
+        effortLog.setEndTime(timeFormatter.format(date));
     }
     @FXML protected void startActivity(ActionEvent event) {
-    	if(getProject() != null && getLifeCycleStep() != null && getEffortCategory() != null && getDeliverable() != null) {
+    	if(getProject() != null && getLifeCycleStep() != null && getEffortCategory() != null && getDeliverable() != null && clockStatus.getText().compareTo("Clock Stopped") == 0) {
     		clockStatus.setText("Clock Started");
+    		date.setTime(System.currentTimeMillis());
     		
     		// create effort log for selected project
-    		Project project = Data.getProject(getProject());
-    		project.createEffortLog( new EffortLog(getDeliverable(), getEffortCategory(), getLifeCycleStep()) );
+    		project = Data.getProject(getProject());
+    		effortLog = new EffortLog(getDeliverable(), getEffortCategory(), getLifeCycleStep());
+    		project.createEffortLog(effortLog);
+    		
+    		// set current time and date
+    		effortLog.setDate(dateFormatter.format(date));
+    		effortLog.setStartTime(timeFormatter.format(date));
+    		
     		
     		// temporary, show effort log was created
     		String effortLog = project.getEffortLogs().get(project.getEffortLogs().size()-1).getLog();
