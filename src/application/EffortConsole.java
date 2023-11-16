@@ -1,5 +1,5 @@
 package application;
- 
+
 import java.io.Console;
 import java.io.IOException;
 import java.net.URL;
@@ -34,6 +34,7 @@ public class EffortConsole implements Initializable{
 	}
 	
 	Also Planning Poker Pane
+
 	 */
 	
     @FXML private Text clockStatus;
