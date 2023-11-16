@@ -37,8 +37,6 @@ public class EffortConsole implements Initializable{
 		pane = FXMLLoader.load(getClass().getResource("_______.fxml"));
 		Main.setScene("Defect Log Console", pane);
 	}
-	
-	Also Planning Poker Pane
 
 	 */
 	
