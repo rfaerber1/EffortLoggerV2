@@ -1,15 +1,10 @@
 package application;
-	
 import java.io.IOException;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
-
 
 public class Main extends Application {
 	
@@ -20,7 +15,7 @@ public class Main extends Application {
 		stg = stage;
 		Parent root = null;
 		try {
-			root = FXMLLoader.load(getClass().getResource("EffortLoggerV2GUIPrototype.fxml"));
+			root = FXMLLoader.load(getClass().getResource("Login.fxml"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
