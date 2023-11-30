@@ -1,3 +1,9 @@
+/**
+ * Name: Effort Log Class
+ * Description: stores data for each effort log
+ * Author(s): Raylene Faerber
+ */
+
 package application;
  
  
@@ -31,20 +37,32 @@ public class EffortLog{
 		return name;
 	}
 	
-	public void setName(String name) {
-		this.name = name;
+	public void setName() {
+		this.name = getLifeCycleStep() + "-" + getEffortCategory() + "-" + getDeliverable() + "-" + getDate();
 	}
 	
 	public String getDeliverable() {
 		return deliverable;
 	}
 	
+	public void changeDeliverable(String deliverable) {
+		this.deliverable = deliverable;
+	}
+	
 	public String getLifeCycleStep() {
 		return lifeCycleStep;
 	}
 	
+	public void changeLifeCycleStep(String step) {
+		this.lifeCycleStep = step;
+	}
+	
 	public String getEffortCategory() {
 		return effortCategory;
+	}
+	
+	public void changeEffortCategory(String category) {
+		this.effortCategory = category;
 	}
 	
 	public void setTimeSpent(double time) {
@@ -67,7 +85,7 @@ public class EffortLog{
 		this.startTime = time;
 	}
 	
-	public String getSartTime() {
+	public String getStartTime() {
 		return startTime;
 	}
 	
