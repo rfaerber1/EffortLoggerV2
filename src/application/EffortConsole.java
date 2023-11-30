@@ -76,16 +76,17 @@ public class EffortConsole implements Initializable{
     		// create effort log for selected project
     		project = Data.getProject(getProject());
     		effortLog = new EffortLog(getDeliverable(), getEffortCategory(), getLifeCycleStep());
-    		project.createEffortLog(effortLog);
     		
     		// set current time and date
     		effortLog.setDate(dateFormatter.format(date));
     		effortLog.setStartTime(timeFormatter.format(date));
     		
+    		// save effort log to correct project
+    		project.createEffortLog(effortLog);
     		
     		// temporary, show effort log was created
-    		String effortLog = project.getEffortLogs().get(project.getEffortLogs().size()-1).getLog();
-    		System.out.println("EffortLog created within Project: " + project.getName() +"\nEffort Log: \n" + effortLog);
+    		//String effortLog = project.getEffortLogs().get(project.getEffortLogs().size()-1).getLog();
+    		//System.out.println("EffortLog created within Project: " + project.getName() +"\nEffort Log: \n" + effortLog);
     	}
     }
     

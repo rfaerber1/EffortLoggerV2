@@ -34,11 +34,13 @@ public class EffortLogEditor implements Initializable{
 	@FXML TextField StartTime;
 	@FXML TextField EndTime;
 	
+	// Called when 'update this entry' is pressed
 	@FXML protected void updateLog(ActionEvent event) {
 		if(effortLog != null && checkInput.checkForDate(Date.getText()) == true && checkInput.checkForTime(StartTime.getText()) == true && checkInput.checkForTime(StartTime.getText()) == true) {
 			effortLog.setDate(Date.getText());
 			effortLog.setStartTime(StartTime.getText());
 			effortLog.setEndTime(EndTime.getText());
+			effortLog.setName();
 		}
 	}
 	
@@ -172,7 +174,7 @@ public class EffortLogEditor implements Initializable{
 				effortLog = Data.getProject(getProject()).getEffortLog(getEffortLog());
 				if(effortLog != null) {
 					Date.setText(effortLog.getDate());
-					StartTime.setText(effortLog.getSartTime());
+					StartTime.setText(effortLog.getStartTime());
 					EndTime.setText(effortLog.getEndTime());
 				}
 			}

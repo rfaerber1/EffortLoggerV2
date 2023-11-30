@@ -31,8 +31,8 @@ public class EffortLog{
 		return name;
 	}
 	
-	public void setName(String name) {
-		this.name = name;
+	public void setName() {
+		this.name = getLifeCycleStep() + "-" + getEffortCategory() + "-" + getDeliverable() + "-" + getStartTime();
 	}
 	
 	public String getDeliverable() {
@@ -67,7 +67,7 @@ public class EffortLog{
 		this.startTime = time;
 	}
 	
-	public String getSartTime() {
+	public String getStartTime() {
 		return startTime;
 	}
 	
