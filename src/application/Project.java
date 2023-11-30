@@ -1,6 +1,6 @@
 /**
  * Name: Project Class
- * Description: Creates projects with a name and description, that hold effort logs, defect logs, and user stories relevant to the project
+ * Description: Creates projects with a name and description, and holds effort logs for each project
  * Author: Raylene Faerber
  */
 package application;
@@ -12,8 +12,7 @@ public class Project {
 	private String name;
 	private String description;
 	
-	
-	// for effortLogs not assigned to a user story
+	// array containing the effortlogs
 	private ArrayList<EffortLog> effortLogs = new ArrayList<EffortLog>();
 	
 	public Project (String name) {
@@ -59,4 +58,5 @@ public class Project {
 		}
 		return names;
 	}
+	
 }

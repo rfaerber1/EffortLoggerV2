@@ -1,3 +1,9 @@
+/**
+ * Name: Effort Console Class
+ * Description: Contains functionality for editing effort logs and using planning poker tools
+ * Author(s): Raylene Faerber, Bailey Learned
+ */
+
 package application;
 
 import java.io.Console;
@@ -50,7 +56,7 @@ public class EffortConsole implements Initializable{
 	Project project;
 	EffortLog effortLog;
 	
-	public SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-mm-dd");
+	public SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
 	public SimpleDateFormat timeFormatter = new SimpleDateFormat("hh:mm:ss");
 	public Date date = new Date();
 	
