@@ -19,10 +19,10 @@ public class EffortLog{
 	 * @param lifeCycleStep
 	 * @param effortCategory
 	 */
-	public EffortLog(String deliverable, String lifeCycleStep, String effortCategory) {
+	public EffortLog(String deliverable, String effortCategory, String lifeCycleStep) {
 		this.deliverable = deliverable;
-		this.lifeCycleStep = lifeCycleStep;
 		this.effortCategory = effortCategory;
+		this.lifeCycleStep = lifeCycleStep;
 		
 		this.name = "Some amalgamation";
 	}
